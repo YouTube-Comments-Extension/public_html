@@ -13,4 +13,6 @@ This project is a browser extension designed for YouTube. It detects videos with
 
 ## Authors
 * Emiliano Aguilar [@zoroark45](https://github.com/zoroark45)
+ * (https://www.cubedomination.com/)
 * Manvir Dhillon [@Mini99](https://github.com/Mini99)
+ * (https://manvirdhillon.com/)
