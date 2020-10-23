@@ -10,3 +10,7 @@ This project is a browser extension designed for YouTube. It detects videos with
 
 ### Installing
 * [ReplyTube](https://replytu.be/) Visit our website for further instructions on how to install this extension
+
+## Authors
+Emiliano Aguilar [https://github.com/zoroark45](@zoroark45)
+Manvir Dhillon [https://github.com/Mini99](@Mini99)
