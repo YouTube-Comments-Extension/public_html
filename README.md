@@ -1,1 +1,1 @@
-# public_html
+# YouTube Comments Extension
