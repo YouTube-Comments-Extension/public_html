@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
       chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
         alert(tabs[0].url)
         // document.getElementById('Current_url').value = tabs[0].url;
-        console.log(tabs[0].url, tabs[0].title, tabs[0].incognito, tabs, this.bookmark_title);
+        console.log(tabs[0].url);
       });
     }
   });
