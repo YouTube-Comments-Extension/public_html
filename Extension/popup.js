@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
   
     function AddUrl() {
       chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
-        alert(tabs[0].url)
         // document.getElementById('Current_url').value = tabs[0].url;
-        console.log(tabs[0].url);
+        let tabUrl = tabs[0].url
+        console.log(tabUrl);
       });
     }
   });
