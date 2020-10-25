@@ -5,12 +5,18 @@
     "version": "1.0",
     "description": "YouTube Comments Extension for Disabled Comments.",
 
-      "browser_action": {
-        "default_popup": "popup.html"
-      },
+    "content_scripts": [
+        {
+          "matches": ["https://www.youtube.com/*"]
+        }
+      ],
 
-      "permissions":[
-          "activeTab"
-      ]
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+
+    "permissions":[
+        "activeTab"
+    ]
 }
 
