@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
           document.getElementById("demo").innerHTML = res;
         }
         else{
-          document.getElementById("demo").innerHTML = "no, you can't do that.";
+          document.getElementById("demo").innerHTML = "Invalid URL";
         }
       });
     }
