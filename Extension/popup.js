@@ -2,11 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var checkPageButton = document.getElementById('checkPage');
     checkPageButton.addEventListener('click', function() {
   
-        var video_id = window.location.search.split('v=')[1];
-        var ampersandPosition = video_id.indexOf('&');
-        if(ampersandPosition != -1) {
-            video_id = video_id.substring(0, ampersandPosition);
-        }
-        console.log(video_id)
+        chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+            let url = tabs[0].url;
+            console.log(url);
+        });
     }, false);
   }, false);
