@@ -7,7 +7,7 @@
     "content_scripts": [
         {
           "matches": ["<all_urls>"],
-          "js": ["jquery.min.js", "content.js"]
+          "js": ["index.html", "content.js"]
         }
       ],
 
