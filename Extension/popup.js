@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function AddUrl() {
       chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
         var str = tabs[0].url
-        var res = str.slice(32);
+        var res = str.slice(32,43);
         document.getElementById("demo").innerHTML = res;
       });
     }
