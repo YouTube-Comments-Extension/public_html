@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     checkPageButton.addEventListener('click', function() {
   
         chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
-            let url = tabs[0].url;
-            console.log(url);
+            let tabUrl = tabs[0].url;
+            console.log(tabUrl);
         });
     }, false);
   }, false);
