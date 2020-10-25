@@ -10,8 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
       chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
         var str = tabs[0].url
         var res = str.slice(32);
-        //console.log(ytID);
-        console.log(res);
+        document.getElementById("demo").innerHTML = res;
       });
     }
   });
