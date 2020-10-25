@@ -9,8 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function AddUrl() {
       chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
         var str = tabs[0].url
-        var res = str.slice(32,43);
-        document.getElementById("demo").innerHTML = res;
+        if(str.startsWith("https://www.youtube.com/watch?v=")){
+          var res = str.slice(32,43);
+          document.getElementById("demo").innerHTML = res;
+        }
+        else{
+          document.getElementById("demo").innerHTML = "no, you can't do that.";
+        }
       });
     }
   });
