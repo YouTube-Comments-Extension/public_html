@@ -12,8 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
         var match = url.match( youtubeRegExp );
         if( match && match[ 1 ].length == 11 ) {
           url = match[ 1 ];
-          var newUrl = "https://replytu.be/video.php?ytid=" + res;
-          document.getElementById("demo").innerHTML = url;
+          var vidUrl = "https://replytu.be/video.php?ytid=" + url;
+          window.open(vidUrl, '_blank');
+          //document.getElementById("demo").innerHTML = url;
         }
       });
     }
