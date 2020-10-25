@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var str = tabs[0].url
         if(str.startsWith("https://www.youtube.com/watch?v=")){
           var res = str.slice(32,43);
-          document.getElementById("demo").innerHTML = res;
           window.open("https://replytu.be/", '_blank');
         }
         else{
