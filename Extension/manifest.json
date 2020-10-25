@@ -2,5 +2,17 @@
     "name": "ReplyTube",
     "version": "1.0",
     "description": "YouTube Comments Extension for Disabled Comments.",
-    "manifest_version": 2
+    "manifest_version": 2,
+
+    "content_scripts": [
+        {
+          "matches": ["https://youtube.com/*, http://youtube.com/*"],
+          "js": ["content.js"]
+        }
+      ],
+
+      "background": {
+        "scripts": ["background.js"]
+      }
 }
+
