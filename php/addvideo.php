@@ -1,5 +1,7 @@
 <?php
 
+include('./classes/DB.php');
+
 if(){ // the video exists
   if(){ // the video isn't in the database
     // make a query and add the ytid to the database
