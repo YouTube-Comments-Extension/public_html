@@ -21,7 +21,7 @@ foreach($ytid as $video){ // get all the videos in the database, display their t
     $snippetResponse = file_get_contents($ytsnippetURL);
     $snippetJson = json_decode($snippetResponse);
     $videoTitle = $snippetJson->items[0]->snippet->title;
-    $videoChannel = $snippetJson->items[0]->snippet->channelId;   
+    $videoChannel = $snippetJson->items[0]->snippet->channelTitle;   
     $backgroundColor = selectColor::random_color();
     echo '<div style="width:500px;display:inline-block;background-color:#'.$backgroundColor.';">';
     echo '<h4 style="display:table;margin-top: 0;margin-bottom: 0;position:relative;text-align:center;background-color:rgba(255, 255, 255, 0.5);">'.$videoTitle.' by '.$videoChannel.'</h4>';
