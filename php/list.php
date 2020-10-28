@@ -10,13 +10,13 @@ include('classes/COLOR.php');
 
 if (isset($_GET['channel']) && $_GET['channel'] != NULL) { // if there is a query and it is valid, list videos for the queried channel.
     echo '<body style="margin-top: 0;margin-bottom: 0;background-color:#181818;">';
-    echo $_GET['channel'];
+    echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">'.$_GET['channel'].'</h4>';
     echo '</body>';
 }else{
         if(isset($_GET['channel']) && $_GET['channel'] == NULL){ // if the query is empty return error and redirect to list all videos
             echo '<body style="margin-top: 0;margin-bottom: 0;background-color:#181818;">';
             header("Refresh:1; url=https://www.replytu.be/list");
-            echo 'This is not a valid channel';
+            echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">This is not a valid channel</h4>';
             echo '</body>';
         }else{//if there is no query, list all the videos in the database
             $myvideo = "1";
