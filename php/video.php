@@ -19,9 +19,13 @@ if (isset($_GET['ytid'])) {
     echo '<div align="center"><h1>'.$videoTitle.'</h1></div>';
   } else{
     echo '<title>redirecting...</title>';
-    header("Refresh:0; url=https://www.replytu.be/");
+    header("Refresh:1; url=https://www.replytu.be/");
     echo "redirecting...video not found in database";
   }
+}else{
+  echo '<title>redirecting...</title>';
+  header("Refresh:1; url=https://www.replytu.be/list");
+  echo "redirecting...";
 }
 
 ?>
