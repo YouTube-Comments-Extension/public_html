@@ -30,19 +30,19 @@ if(isset($_COOKIE['AddVideo'])){
           echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">This video is already in the database</h4>';
         }
       }else{
-        header("Refresh:2; url=https://www.replytu.be");
+        header("Refresh:1; url=https://www.replytu.be");
         echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">comments are enabled on this video</h4>';
       }
     }else{
-      header("Refresh:2; url=https://www.replytu.be");
+      header("Refresh:1; url=https://www.replytu.be");
       echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">This video does not exist</h4>';
     } 
   }else {
-    header("Refresh:2; url=https://www.replytu.be");
+    header("Refresh:1; url=https://www.replytu.be");
     echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">This is not a valid URL</h4>';// video does not exist
   }
 } else{
-  header("Refresh:2; url=https://www.replytu.be");
+  header("Refresh:1; url=https://www.replytu.be");
   echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">Add our extension first</h4';
 }
 echo '</body>';
