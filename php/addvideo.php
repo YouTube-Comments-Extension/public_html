@@ -42,7 +42,7 @@ if(isset($_COOKIE['AddVideo'])){
     echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">This is not a valid URL</h4>';// video does not exist
   }
 } else{
-    if($_GET['ytid'] == NULL){
+    if(isset($_GET['ytid']) && $_GET['ytid'] == NULL){
       header("Refresh:1; url=https://www.replytu.be");
       echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">redirecting... invalid query</h4';      
     }else{
