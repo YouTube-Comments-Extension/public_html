@@ -14,7 +14,7 @@ if (isset($_GET['ytid']) && $_GET['ytid'] != NULL) {
     $snippetResponse = file_get_contents($ytsnippetURL);
     $snippetJson = json_decode($snippetResponse);
     $videoTitle = $snippetJson->items[0]->snippet->title;
-    echo '<title>'.$videoTitle.'</title>';
+    echo '<title>'.$videoTitle.' - ReplyTube</title>';
     echo '<body style="margin-top: 0;margin-bottom: 0;background-color:#181818;">';
     echo "<div align='center'><iframe width='1280' height='720' src='https://www.youtube.com/embed/".$_GET['ytid']."' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>";
     echo '<div align="center"><h1 style="color: white;font-family: Roboto, Arial, sans-serif;">'.$videoTitle.'</h1></div>';

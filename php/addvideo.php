@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 include('classes/DB.php');
 include('classes/API.php');
 
+echo '<title>ReplyTube | Add Video</title>';
 echo '<body style="margin-top: 0;margin-bottom: 0;background-color:#181818;">';
 if(isset($_COOKIE['AddVideo'])){
   setcookie("AddVideo", '' , time() - 30);
