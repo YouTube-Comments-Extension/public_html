@@ -19,7 +19,8 @@ if (isset($_GET['ytid'])) {
     echo '<div align="center"><h1>'.$videoTitle.'</h1></div>';
   } else{
     echo '<title>redirecting...</title>';
-    echo "video not found in database";
+    header("Refresh:0; url=https://www.replytu.be/");
+    echo "redirecting...video not found in database";
   }
 }
 
