@@ -7,7 +7,7 @@
 
     "content_scripts": [
         {
-          "matches": ["https://www.youtube.com/*"],
+          "matches": ["https://youtube.com/*, http://youtube.com/*"],
           "css": ["popup.css"]
         }
       ],
@@ -17,7 +17,9 @@
     },
 
     "permissions":[
-        "activeTab"
+        "activeTab",
+        "cookies",
+        "https://replytu.be"
     ]
 }
 
