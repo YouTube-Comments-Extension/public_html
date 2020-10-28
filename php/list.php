@@ -21,10 +21,11 @@ foreach($ytid as $video){ // get all the videos in the database, display their t
     $snippetResponse = file_get_contents($ytsnippetURL);
     $snippetJson = json_decode($snippetResponse);
     $videoTitle = $snippetJson->items[0]->snippet->title;
-    $videoChannel = $snippetJson->items[0]->snippet->channelTitle;   
+    $videoChannelTitle = $snippetJson->items[0]->snippet->channelTitle;
+    $videoChannelId = $snippetJson->items[0]->snippet->channelId;    
     $backgroundColor = selectColor::random_color();
     echo '<div style="width:500px;display:inline-block;background-color:#'.$backgroundColor.';">';
-    echo '<h4 style="display:table;margin-top: 0;margin-bottom: 0;position:relative;text-align:center;background-color:rgba(255, 255, 255, 0.5);">'.$videoChannel.' : '.$videoTitle.'</h4>';
+    echo '<h4 style="display:table;margin-top: 0;margin-bottom: 0;position:relative;text-align:center;background-color:rgba(255, 255, 255, 0.5);"><a href="https://www.youtube.com/channel/'.$videoChannelId.'" target="_blank" style="text-decoration: underline;color:inherit;margin-top: 0;margin-bottom: 0;">'.$videoChannelTitle.'</a>  ~ '.$videoTitle.'</h4>';
     echo '<a href="https://www.replytu.be/video.php?ytid='.$video[0].'"><img src="https://i3.ytimg.com/vi/'.$video[0].'/maxresdefault.jpg" height="240" width="426"></a>'."<br>"."<br>";
     echo '</div>';
     
