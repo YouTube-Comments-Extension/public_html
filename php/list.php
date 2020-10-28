@@ -12,6 +12,7 @@ $myvideo = "1";
 $ytid = DB::query('SELECT ytid FROM ytvideo WHERE retrieve=:retrieve ORDER BY id DESC', array(':retrieve'=>$myvideo));
 
 echo '<title>ReplyTube | List</title>';
+echo '<body style="background-color:#181818;">';
 echo '<div align="center">';
 foreach($ytid as $video){ // get all the videos in the database, display their thumbnail, and link to the video watch page.
 
@@ -28,5 +29,6 @@ foreach($ytid as $video){ // get all the videos in the database, display their t
     
 }
 echo '</div>';
+echo '</body>';
 
 ?>
