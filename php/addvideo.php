@@ -7,9 +7,10 @@ error_reporting(E_ALL);
 include('classes/DB.php');
 include('classes/API.php');
 
+echo '<body style="margin-top: 0;margin-bottom: 0;background-color:#181818;">';
 if(isset($_COOKIE['AddVideo'])){
   setcookie("AddVideo", '' , time() - 30);
-  if(isset($_GET['ytid'])){
+  if(isset($_GET['ytid']) && $_GET['ytid'] != NULL){
   $apiPublicKey = API::publicKey();
   $ytidURL = 'https://www.googleapis.com/youtube/v3/videos?part=id&id=' . $_GET['ytid'] . '&key=' . $apiPublicKey;
   $idResponse = file_get_contents($ytidURL);
@@ -23,23 +24,24 @@ if(isset($_COOKIE['AddVideo'])){
         if(!DB::query('SELECT ytid FROM ytvideo WHERE ytid=:ytid', array(':ytid'=>$_GET['ytid']))){
           DB::query('INSERT INTO ytvideo VALUES (\'0\', :ytid, \'1\')', array(':ytid'=>$_GET['ytid']));
           header("Refresh:0; url=https://www.replytu.be/video.php?ytid=".$_GET['ytid']."");
-          echo 'adding to the database';// video exists
+          echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">adding to the database</h4>';// video exists
         }else{
-          header("Refresh:0; url=https://www.replytu.be/video.php?ytid=".$_GET['ytid']."");
-          echo 'This video is already in the database';
+          header("Refresh:2; url=https://www.replytu.be/video.php?ytid=".$_GET['ytid']."");
+          echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">This video is already in the database</h4>';
         }
       }else{
-        echo 'comments are enabled on this video';
+        echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">comments are enabled on this video</h4>';
       }
     }else{
-      echo 'This video does not exist';
+      echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">This video does not exist</h4>';
     } 
   }else {
-    echo 'This is not a valid URL';// video does not exist
+    echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">This is not a valid URL</h4>';// video does not exist
   }
 } else{
-  echo "Add our extension first";
+  echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">Add our extension first</h4';
 }
+echo '</body>';
 // if(){ // ytid is set
 //   if(){ // the video exists
 //     if(){ // if the video has comments disabled
