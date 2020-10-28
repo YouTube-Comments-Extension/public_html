@@ -8,12 +8,17 @@ include('classes/DB.php');
 include('classes/API.php');
 include('classes/COLOR.php');
 
-if (isset($_GET['channel']) && $_GET['channel'] != NULL) {
+if (isset($_GET['channel']) && $_GET['channel'] != NULL) { // if there is a query and it is valid, list videos for the queried channel.
+    echo '<body style="margin-top: 0;margin-bottom: 0;background-color:#181818;">';
     echo $_GET['channel'];
+    echo '</body>';
 }else{
-        if(isset($_GET['channel']) && $_GET['channel'] == NULL){
+        if(isset($_GET['channel']) && $_GET['channel'] == NULL){ // if the query is empty return error and redirect to list all videos
+            echo '<body style="margin-top: 0;margin-bottom: 0;background-color:#181818;">';
+            header("Refresh:1; url=https://www.replytu.be/list");
             echo 'This is not a valid channel';
-        }else{
+            echo '</body>';
+        }else{//if there is no query, list all the videos in the database
             $myvideo = "1";
             $ytid = DB::query('SELECT ytid FROM ytvideo WHERE retrieve=:retrieve ORDER BY id DESC', array(':retrieve'=>$myvideo));
     
