@@ -42,8 +42,13 @@ if(isset($_COOKIE['AddVideo'])){
     echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">This is not a valid URL</h4>';// video does not exist
   }
 } else{
-  header("Refresh:1; url=https://www.replytu.be");
-  echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">Add our extension first</h4';
+    if($_GET['ytid'] == NULL){
+      header("Refresh:1; url=https://www.replytu.be");
+      echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">redirecting... invalid query</h4';      
+    }else{
+      header("Refresh:1; url=https://www.replytu.be");
+      echo '<h4 style="margin-top: 0;margin-bottom: 0;position:relative;color:white;font-family: Roboto, Arial, sans-serif;">Add our extension</h4';
+    }
 }
 echo '</body>';
 // if(){ // ytid is set
