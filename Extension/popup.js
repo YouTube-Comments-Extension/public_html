@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //Display Button Message
   chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
     var str = tabs[0].url
-    if(str === "https://replytu.be/"){ //On ReplyTube homepage
+    if(str === "https://replytu.be/" || "https://replytu.be/index"){ //On ReplyTube homepage
       document.getElementById("btn").innerHTML = "Thanks for downloading!";
       return;
     }
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function AddUrl() {
     chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
       var str = tabs[0].url
-      if(str === "https://replytu.be/"){ //On ReplyTube homepage
+      if(str === "https://replytu.be/" || "https://replytu.be/index"){ //On ReplyTube homepage
         window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_blank'); //Rick Roll
       }
       else if(str.startsWith("https://replytu.be/video.php?ytid=")){ //On ReplyTube Video
